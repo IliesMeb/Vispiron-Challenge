@@ -38,15 +38,20 @@ class Colour:
         return f"The brightes color is: {brightest_color['hexa_value']} (r={brightest_color['red']}, g={brightest_color['green']}, b={brightest_color['blue']}) called {brightest_color['colour_name']}"
 
     def _is_valid_hexa_code(self, hexa_value: str) -> bool:
+        """
+        Check if a hexa code is valid
+        """
         if not hexa_value[0] == '#' or len(hexa_value) != 7:
             return False
         for i in range(1, 7):
-                if not hexa_value[i] in '0123456789ABCDEF':
+                if not hexa_value[i] in '0123456789ABCDEFabcdef':
                     return False
         return True
     
     def calculate_brightness(self) -> float:
-        """Calculate the brightness of a color using the formula: sqrt(0.241 R^2 + 0.691 G^2 + 0.068 B^2)."""
+        """
+        Calculate the brightness of a color using the formula: sqrt(0.241 R^2 + 0.691 G^2 + 0.068 B^2)
+        """
         return sqrt(
             0.241 * (self.red ** 2) +
             0.691 * (self.green ** 2) +
