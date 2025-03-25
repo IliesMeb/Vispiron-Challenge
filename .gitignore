@@ -1,0 +1,11 @@
+# Cache-Dateien
+__pycache__/
+*.py[cod]
+.pytest_cache
+*.pyc
+
+# Virtuelle Umgebungen
+VispironVenv
+
+# Systemdateien
+.DS_Store
